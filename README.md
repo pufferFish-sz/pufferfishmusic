@@ -26,7 +26,7 @@ js/main.js          Nav menu, hero waveform, scroll animations, contact form (do
 
 assets/img/         Images (AVIF, already compressed)
 assets/audio/       Drop MP3s here for the music page
-CNAME               Custom domain marker for GitHub Pages (don't delete)
+CNAME.disabled      Custom domain marker — rename to CNAME when switching DNS (see below)
 .nojekyll           Tells GitHub Pages to serve files as-is (don't delete)
 ```
 
@@ -85,7 +85,20 @@ form `action` URL instead.)
 
 ## Custom domain: pufferfishmusic.net
 
-The repo already contains a `CNAME` file with `www.pufferfishmusic.net`. Two more steps:
+The domain marker currently sits at **`CNAME.disabled`** so that the temporary
+`*.github.io` preview URL keeps working while `pufferfishmusic.net` still points at Wix.
+Going live is three steps:
+
+### 0. Activate the CNAME file (when you're ready to switch)
+
+```
+git mv CNAME.disabled CNAME
+git commit -m "Go live on pufferfishmusic.net"
+git push
+```
+
+(While `CNAME` is active, the github.io URL redirects to the custom domain — that's
+expected.)
 
 ### 1. DNS records at your registrar
 
