@@ -25,6 +25,7 @@ js/embed.js         The dual YouTube/Bilibili player (don't edit).
 js/main.js          Nav menu, hero waveform, scroll animations, contact form (don't edit).
 
 assets/img/         Images (AVIF, already compressed)
+assets/fonts/       Self-hosted fonts (no Google Fonts request — loads fine in China too)
 assets/audio/       Drop MP3s here for the music page
 CNAME.disabled      Custom domain marker — rename to CNAME when switching DNS (see below)
 .nojekyll           Tells GitHub Pages to serve files as-is (don't delete)

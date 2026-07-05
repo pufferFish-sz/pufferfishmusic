@@ -6,6 +6,26 @@
    Change it there once and the whole site updates.
    ========================================================================== */
 
+/* ---------- Self-hosted fonts (no external requests — loads fine everywhere,
+   including mainland China). Variable fonts: one file per family covers all
+   weights used on the site. ---------- */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../assets/fonts/inter-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url("../assets/fonts/space-grotesk-latin.woff2") format("woff2");
+}
+
 :root {
   /* Colors (dark theme) */
   --bg: #0a0d13;            /* page background */
