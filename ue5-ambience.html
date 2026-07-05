@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE5 Environmental Ambience — Shangyi Zhu</title>
+  <meta name="description" content="Designing natural ambience for a medieval village game scene in Unreal Engine 5 with Wwise: audio volumes, rooms and portals, reverb, random emitters, and footsteps.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/videos.js"></script>
+  <script defer src="js/embed.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#10141d"/><g fill="none" stroke-linecap="round" stroke-width="5"><line x1="12" y1="26" x2="12" y2="38" stroke="#49e0c3"/><line x1="22" y1="18" x2="22" y2="46" stroke="#49e0c3"/><line x1="32" y1="10" x2="32" y2="54" stroke="#67d4e8"/><line x1="42" y1="20" x2="42" y2="44" stroke="#8b7cf6"/><line x1="52" y1="28" x2="52" y2="36" stroke="#8b7cf6"/></g></svg>
+        Puffer Fish Music
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-label">Projects / 01</p>
+        <h1>Environmental Ambience Design</h1>
+        <p>
+          This project focuses on designing a natural ambience for a game scene using Wwise and
+          Unreal Engine 5. This documentation covers the details of the sound implementation and
+          the specific design choices behind them.
+        </p>
+        <ul class="tag-row">
+          <li>UE5</li><li>Wwise</li><li>Spatial Audio</li><li>Sound Design</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container container--narrow">
+      <div class="video-embed" data-video="ambience"></div>
+    </div>
+
+    <section class="doc-section reveal">
+      <div class="container">
+        <div class="doc-split">
+          <div>
+            <h2>Project overview</h2>
+            <p>
+              The game operates within a medieval village scene featuring three distinct areas
+              for the player to explore: the church, the village, and open spaces. Each area has
+              its own unique ambience and soundscape.
+            </p>
+          </div>
+          <figure>
+            <img src="assets/img/ambience/zones.avif" alt="Top-down view of the medieval village scene divided into colored ambience zones" loading="lazy" width="760" height="473">
+            <figcaption>The three ambience zones of the village scene.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section reveal">
+      <div class="container">
+        <div class="doc-split">
+          <div>
+            <h2>Audio volumes</h2>
+            <p>
+              The entire game scene is enclosed within the AkSpatialAudioVolume
+              <em>Environment</em>, which provides a quiet overall ambience featuring soft wind.
+              Its child room, <em>Bug Zone</em>, carries cicada sounds throughout. This ambience
+              is looped within a cuboid spatial volume. The sound is set to 2D and converted from
+              stereo to mono to avoid directional cues — if it stayed stereo, bug sounds in one
+              ear would remain fixed even as the player turns, making the environment feel less
+              realistic.
+            </p>
+            <p>
+              The floor and ceiling of Bug Zone are blocked, while the sides allow its parent
+              ambience to permeate through.
+            </p>
+          </div>
+          <figure>
+            <img src="assets/img/ambience/surfaces.avif" alt="Spatial audio volume with blocked floor and ceiling surfaces highlighted" loading="lazy" width="614" height="382">
+            <figcaption>Blocked floor/ceiling on the Bug Zone volume.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section reveal">
+      <div class="container">
+        <div class="doc-split">
+          <div>
+            <h2>Rooms &amp; portals</h2>
+            <p>
+              The wood house is made up of three separate audio volumes. The one at the entrance
+              has a lower transmittance rate than the main room, letting more of the outside
+              ambience bleed in.
+            </p>
+            <p>
+              Wwise rooms and portals connect the sounds between spaces, and each room carries
+              its own reverberation rate.
+            </p>
+          </div>
+          <figure>
+            <img src="assets/img/ambience/wood-house.avif" alt="Interior of the wood house showing its three audio volumes" loading="lazy" width="700" height="397">
+            <figcaption>Inside the wood house: three audio volumes with different transmittance.</figcaption>
+          </figure>
+        </div>
+        <div class="doc-split" style="margin-top:2rem">
+          <figure>
+            <img src="assets/img/ambience/rooms-and-portals.avif" alt="Wwise rooms and portals connecting spaces in the village" loading="lazy" width="700" height="386">
+            <figcaption>Rooms and portals linking interior and exterior soundscapes.</figcaption>
+          </figure>
+          <div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section reveal">
+      <div class="container">
+        <div class="doc-split">
+          <div>
+            <h2>Sound listener</h2>
+            <p>
+              The sound listener is where sound is received rather than emitted. By default,
+              Unreal Engine attaches the listener to the camera — but there is some debate about
+              whether it should follow the player or the camera, as both setups fit different
+              situations. In this third-person setup, the listener is attached to the player
+              (with camera rotation) to avoid sounds abruptly shifting as the camera moves, while
+              still hearing what the player hears at their location.
+            </p>
+          </div>
+          <figure>
+            <img src="assets/img/ambience/player-camera-rotation.avif" alt="Third-person character setup with the sound listener attached to the player using camera rotation" loading="lazy" width="786" height="489">
+            <figcaption>Listener on the player, rotation from the camera.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section reveal">
+      <div class="container">
+        <div class="doc-split">
+          <div>
+            <h2>Reverb</h2>
+            <p>
+              Inside the village it’s important to distinguish exterior spaces from interiors.
+              The two main levers are reverberation rate and sound occlusion. The cleanest way to
+              alter these properties is with auxiliary buses in Wwise using different convolution
+              or plate reverbs, giving each location its own layer of reverb. This project uses
+              reverb buses for small, medium, and large rooms, forests, and the lakeside.
+            </p>
+          </div>
+          <figure>
+            <img src="assets/img/ambience/reverb.avif" alt="Wwise auxiliary bus structure with reverb buses for different room sizes and outdoor spaces" loading="lazy" width="444" height="276">
+            <figcaption>Auxiliary reverb buses per space type.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section reveal">
+      <div class="container">
+        <div class="doc-split">
+          <div>
+            <h2>Random sound emitters</h2>
+            <p>
+              A dynamic village soundscape needs randomness, mimicking the way sounds occur in
+              real life. Several sporadic sounds are placed in the scene: insect calls, church
+              bells that chime every ten minutes, and bird calls in the trees. Sound occlusion is
+              turned off for these ambient sounds so they propagate naturally through the scene.
+            </p>
+            <p>
+              The 3D emitters have circular attenuation areas with definable radii.
+            </p>
+          </div>
+          <figure>
+            <img src="assets/img/ambience/example-emitter.avif" alt="3D sound emitters in the scene with orange circles showing their attenuation radii" loading="lazy" width="700" height="528">
+            <figcaption>Example emitters — orange lines mark attenuation areas.</figcaption>
+          </figure>
+        </div>
+        <div class="doc-split" style="margin-top:2rem">
+          <figure>
+            <img src="assets/img/ambience/randomized-sounds.avif" alt="Randomized ambient sound containers set up in Wwise" loading="lazy" width="760" height="473">
+            <figcaption>Randomized containers keep the ambience from repeating.</figcaption>
+          </figure>
+          <div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section reveal">
+      <div class="container">
+        <div class="doc-split">
+          <div>
+            <h2>Automated sound path</h2>
+            <p>
+              The wild geese are Niagara VFX that fly in circles, so their sound path is set to
+              revolve around the player. While standing under the flock, their calls travel
+              around the stereo field, ear to ear.
+            </p>
+          </div>
+          <figure>
+            <img src="assets/img/ambience/wild-geese.avif" alt="Wild geese Niagara VFX flying in circles above the village" loading="lazy" width="700" height="550">
+            <figcaption>Wild geese flying in circles.</figcaption>
+          </figure>
+        </div>
+        <div class="doc-split" style="margin-top:2rem">
+          <figure>
+            <img src="assets/img/ambience/wild-geese-path.avif" alt="Automated 3D audio path for the wild geese revolving around the player" loading="lazy" width="546" height="340">
+            <figcaption>The automated 3D path of the geese audio.</figcaption>
+          </figure>
+          <div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section reveal">
+      <div class="container">
+        <div class="doc-split">
+          <div>
+            <h2>Footsteps</h2>
+            <p>
+              To learn which surface the character is on, a ray is shot beneath them — the first
+              material it contacts reports back and switches the material type for Wwise to alter
+              the sounds. The scene uses four main materials: wood, dirt, grass, and stone.
+            </p>
+            <p>
+              Each sample is sourced from sound libraries and modified to fit the scene. Since
+              the grass here is shallow and soft, a high-pass filter keeps only the high
+              frequencies for a subtle, sizzling effect. Pitch and volume variations add
+              randomness so repeated steps stay natural.
+            </p>
+          </div>
+          <figure>
+            <img src="assets/img/ambience/materials.avif" alt="The four footstep surface materials: wood, dirt, grass, and stone" loading="lazy" width="700" height="501">
+            <figcaption>The four main surface materials.</figcaption>
+          </figure>
+        </div>
+        <div class="doc-split" style="margin-top:2rem">
+          <figure>
+            <img src="assets/img/ambience/footstep-traces.avif" alt="Two line-trace channels used to detect foliage and other materials under the character" loading="lazy" width="640" height="398">
+            <figcaption>Two line traces: one for foliage, one for other materials.</figcaption>
+          </figure>
+          <div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section reveal">
+      <div class="container">
+        <div class="doc-split">
+          <div>
+            <h2>Jump</h2>
+            <p>
+              The jump animation lands each foot at a separate time, so two anim notifies are
+              created: the first triggers a footstep sound, and the second a harder stomp with an
+              additional metal-rustling layer.
+            </p>
+          </div>
+          <figure>
+            <img src="assets/img/ambience/anim-notifies.avif" alt="Jump animation timeline with two anim notifies for the landing sounds" loading="lazy" width="760" height="473">
+            <figcaption>Two anim notifies on the landing.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Shangyi Zhu · Puffer Fish Music</span>
+      <nav aria-label="Social links">
+        <a href="https://github.com/pufferFish-sz" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/shangyi-zhu-6818201b3/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://pufferfish20.itch.io/" target="_blank" rel="noopener">itch.io</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
