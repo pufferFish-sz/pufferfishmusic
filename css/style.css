@@ -329,6 +329,23 @@ a.card:hover {
 .skill h3 { font-size: 1rem; margin-bottom: 0.35rem; color: var(--accent); }
 .skill p { color: var(--text-muted); font-size: 0.92rem; margin: 0; }
 
+/* ---------- Mascot (the original Puffer Fish Music artwork) ---------- */
+
+.mascot { margin: 0; max-width: 420px; }
+.mascot img {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transform: rotate(-1.5deg);
+  transition: transform 0.25s ease;
+}
+.mascot img:hover { transform: rotate(0deg) scale(1.02); }
+.mascot figcaption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
 /* ---------- Experience timeline ---------- */
 
 .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
@@ -486,6 +503,17 @@ a.card:hover {
 /* ---------- Project / documentation pages ---------- */
 
 .page-hero { padding: 4.5rem 0 3rem; border-bottom: 1px solid var(--border); }
+
+/* Variant with a big background banner image.
+   Usage (the image is set inline on the element so the path resolves
+   relative to the page):
+   <section class="page-hero page-hero--banner"
+            style="background-image: linear-gradient(rgba(10,13,19,.72), #0a0d13), url('assets/img/your-banner.avif')"> */
+.page-hero--banner {
+  padding: 7rem 0 4.5rem;
+  background-size: cover;
+  background-position: center;
+}
 .page-hero p { color: var(--text-muted); max-width: 62ch; }
 
 .doc-section { padding: 3rem 0; }
