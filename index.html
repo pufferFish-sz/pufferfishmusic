@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shangyi Zhu — Technical Sound Designer &amp; Composer</title>
-  <meta name="description" content="Portfolio of Shangyi Zhu — technical sound designer and composer for games. Character SFX at Tencent and Lilith, UE5 + Wwise ambience design, interactive music, and audio tools.">
+  <title>Shangyi Zhu · Technical Sound Designer &amp; Composer</title>
+  <meta name="description" content="Portfolio of Shangyi Zhu, a technical sound designer and composer for games. Character SFX at Tencent and Lilith, UE5 + Wwise ambience design, interactive music, and audio tools.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script defer src="js/videos.js"></script>
@@ -36,10 +36,10 @@
     <section class="hero">
       <div class="container">
         <p class="hero-role">Technical Sound Designer · Composer</p>
-        <h1>Shangyi Zhu<br><span class="gradient">makes games sound alive.</span></h1>
+        <h1><span class="gradient">Shangyi Zhu</span></h1>
         <p class="hero-tagline">
-          Game audio designer and composer working across Wwise, FMOD, and Unreal Engine 5 —
-          from in-battle SFX on 1000+ person teams to hand-built audio tools in Python and Lua.
+          Game audio designer and composer working with Wwise, FMOD, and Unreal Engine 5.
+          I design SFX, write interactive music, and build audio tools in Python and Lua.
         </p>
         <!-- Jump chips: add one per project section below -->
         <nav class="jump-nav" aria-label="Jump to a project">
@@ -67,24 +67,25 @@
     <!-- ===== Tencent: The Hidden Ones ===== -->
     <section class="section reveal" id="hidden-ones">
       <div class="container container--narrow">
-        <p class="section-label">Tencent Games — Internship</p>
-        <h2>The Hidden Ones — Character SFX Redesign</h2>
+        <p class="section-label">Tencent Games · Internship</p>
+        <h2>The Hidden Ones: Character SFX Redesign</h2>
         <p class="meta-row"><strong>Programs:</strong> Wwise, REAPER, Python + WAAPI</p>
         <p class="meta-row"><strong>Role:</strong> Sound Design / Implementation, Tools</p>
         <p style="margin-top:1rem">
           <em>The Hidden Ones</em> is a 3D combat action game built around Chinese martial arts.
           Since PVP combat is a major feature, I emphasized defining each character’s personality
           through their distinct ability sounds and spatially dynamic effects. The redesign shown
-          here is for Ruhua, a mechanical puppet — no emotions, powerful, elegant, with a sense
-          of eeriness that often surrounds her.
+          here is for Ruhua, a mechanical puppet. She has no emotions: powerful, elegant, yet a
+          sense of eeriness often surrounds her.
         </p>
         <div class="video-embed" data-video="ruhua"></div>
-        <h3>Audio tools — batch VO import over WAAPI</h3>
+        <h3>Audio tools: batch VO import with WAAPI</h3>
         <p>
           Besides implementing in-battle character SFX through the engine’s animation and scene
           editors, I extended the audio team’s tooling with Python and WAAPI: batch-importing VO
           lines into switch or random containers in Wwise and auto-populating the corresponding
-          events and soundbanks — handy when dealing with hundreds of VO lines at a time.
+          events and soundbanks. This was helpful when dealing with hundreds of VO lines at a
+          time.
         </p>
         <p class="note">
           Disclaimer: all redesign materials shown have already been released on the market or
@@ -96,8 +97,8 @@
     <!-- ===== Lilith: AFK Arena / Journey ===== -->
     <section class="section reveal" id="afk">
       <div class="container container--narrow">
-        <p class="section-label">Lilith Games — Internship</p>
-        <h2>AFK Arena / AFK Journey — UI SFX &amp; VO Pipeline</h2>
+        <p class="section-label">Lilith Games · Internship</p>
+        <h2>AFK Arena / AFK Journey: UI SFX &amp; VO Pipeline</h2>
         <p class="meta-row"><strong>Programs:</strong> REAPER, Lua ReaScript</p>
         <p class="meta-row"><strong>Role:</strong> Sound Design, Pipeline Tools</p>
         <p style="margin-top:1rem">
@@ -106,13 +107,13 @@
           made during the internship.
         </p>
         <div class="video-embed" data-video="afk_ui"></div>
-        <h3>Audio tools — ReaScript batch VO processing</h3>
+        <h3>Audio tools: ReaScript batch VO processing</h3>
         <p>
           The team’s pain point was the massive amount of narrative VO to process. I wrote
           ReaScripts in Lua that manipulate samples directly on each track: automatically
           splitting long WAV files into separate vocal lines, moving each into its own track,
-          and gluing media items per track — so processed files batch-export with the correct
-          naming conventions.
+          and gluing media items per track, so that processed files batch-export with the
+          correct naming conventions.
         </p>
         <figure style="margin:1.5rem 0 0">
           <img src="assets/img/internships/reascript.avif" alt="REAPER session showing a custom ReaScript tool splitting VO lines into separate tracks" loading="lazy" width="729" height="493" style="border-radius:14px;border:1px solid rgba(255,255,255,0.08)">
@@ -162,7 +163,7 @@
           A VR fighting game against a crab from the <em>Classic of Mountains and Seas</em>.
           After composing the music, each stem was arranged in Wwise: the soundtrack transitions
           smoothly from intro exploration into battle with the game state, and an outro plays the
-          victory/defeat phrase immediately after the fight — by jumping straight to the last
+          victory/defeat phrase immediately after the fight by jumping straight to the last
           measure on a game-state switch. Code on
           <a href="https://github.com/ADJ-acent/BigMech" target="_blank" rel="noopener">GitHub</a>.
         </p>
@@ -174,9 +175,9 @@
     <section class="section reveal" id="waves">
       <div class="container container--narrow">
         <p class="section-label">Level Upstate</p>
-        <h2>Waves — 3D Battleship Simulator</h2>
+        <h2>Waves: 3D Battleship Simulator</h2>
         <p class="meta-row"><strong>Programs:</strong> FMOD, REAPER</p>
-        <p class="meta-row"><strong>Role:</strong> All audio — UI, in-battle, ambience, music</p>
+        <p class="meta-row"><strong>Role:</strong> All audio (UI, in-battle, ambience, music)</p>
         <p style="margin-top:1rem">
           A battleship simulator developed with college friends, starting from the Level Upstate
           game program. I made every audio asset in the game. Playable build on
@@ -195,7 +196,7 @@
         <p class="meta-row"><strong>Programs:</strong> Wwise, FMOD, C++, Unity</p>
         <p class="meta-row"><strong>Role:</strong> Audio, and often the code too</p>
         <p style="margin-top:1rem">
-          Across jams I’ve explored game audio in 2D platforming, 3D simulations, and VR — with
+          Across jams I’ve explored game audio in 2D platforming, 3D simulations, and VR, using
           middleware or hand-scripted audio managers. In CMU’s 15-666 Computer Game Programming
           we built a new game nearly every week from scratch in C++: a 2D game about a frog that
           eats bugs, a 3D batting game against flying bugs, and a duck-stepping rhythm game
@@ -213,17 +214,17 @@
         <div class="doc-split">
           <div>
             <p class="section-label">About</p>
-            <h2>Music first, technology close behind</h2>
+            <h2>About me</h2>
             <p>
-              Music Technology master’s student at Carnegie Mellon, currently a Technical Sound
-              Designer at Lilith Games — with a classical piano background and a soft spot for
-              audio tools that save everyone’s afternoon.
+              I’m a Music Technology master’s student at Carnegie Mellon and currently a
+              Technical Sound Designer at Lilith Games, with a classical piano background and
+              an interest in building audio tools.
             </p>
             <a class="btn btn--ghost" href="about.html">More about me →</a>
           </div>
           <figure class="mascot">
-            <img src="assets/img/pufferfish-mascot.avif" alt="Hand-drawn pufferfish playing a music note over a rainbow piano keyboard — the original Puffer Fish Music artwork" loading="lazy" width="1200" height="675">
-            <figcaption>The puffer fish itself — original site artwork.</figcaption>
+            <img src="assets/img/pufferfish-mascot.avif" alt="Hand-drawn pufferfish playing a music note over a rainbow piano keyboard, the original Puffer Fish Music artwork" loading="lazy" width="1200" height="675">
+            <figcaption>The puffer fish, from the original site artwork.</figcaption>
           </figure>
         </div>
       </div>

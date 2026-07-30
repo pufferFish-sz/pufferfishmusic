@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UE5 Environmental Ambience — Shangyi Zhu</title>
+  <title>UE5 Environmental Ambience · Shangyi Zhu</title>
   <meta name="description" content="Designing natural ambience for a medieval village game scene in Unreal Engine 5 with Wwise: audio volumes, rooms and portals, reverb, random emitters, and footsteps.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
@@ -79,7 +79,7 @@
               <em>Environment</em>, which provides a quiet overall ambience featuring soft wind.
               Its child room, <em>Bug Zone</em>, carries cicada sounds throughout. This ambience
               is looped within a cuboid spatial volume. The sound is set to 2D and converted from
-              stereo to mono to avoid directional cues — if it stayed stereo, bug sounds in one
+              stereo to mono to avoid directional cues. If it stayed stereo, bug sounds in one
               ear would remain fixed even as the player turns, making the environment feel less
               realistic.
             </p>
@@ -133,7 +133,7 @@
             <h2>Sound listener</h2>
             <p>
               The sound listener is where sound is received rather than emitted. By default,
-              Unreal Engine attaches the listener to the camera — but there is some debate about
+              Unreal Engine attaches the listener to the camera, but there is some debate about
               whether it should follow the player or the camera, as both setups fit different
               situations. In this third-person setup, the listener is attached to the player
               (with camera rotation) to avoid sounds abruptly shifting as the camera moves, while
@@ -186,7 +186,7 @@
           </div>
           <figure>
             <img src="assets/img/ambience/example-emitter.avif" alt="3D sound emitters in the scene with orange circles showing their attenuation radii" loading="lazy" width="700" height="528">
-            <figcaption>Example emitters — orange lines mark attenuation areas.</figcaption>
+            <figcaption>Example emitters; orange lines mark attenuation areas.</figcaption>
           </figure>
         </div>
         <div class="doc-split" style="margin-top:2rem">
@@ -231,7 +231,7 @@
           <div>
             <h2>Footsteps</h2>
             <p>
-              To learn which surface the character is on, a ray is shot beneath them — the first
+              To learn which surface the character is on, a ray is shot beneath them. The first
               material it contacts reports back and switches the material type for Wwise to alter
               the sounds. The scene uses four main materials: wood, dirt, grass, and stone.
             </p>
