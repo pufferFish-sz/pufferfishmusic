@@ -264,6 +264,37 @@ p { margin: 0 0 1em; }
   html { scroll-behavior: auto; }
 }
 
+/* ---------- Jump navigation (chip links under the home hero) ---------- */
+
+.jump-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2.25rem; }
+.jump-nav a {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+}
+.jump-nav a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+/* Offset anchor targets so the sticky header doesn't cover section titles */
+section[id] { scroll-margin-top: 80px; }
+
+/* ---------- Project metadata lines (Programs / Role) ---------- */
+
+.meta-row {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0 0 0.3rem;
+}
+.meta-row strong {
+  font-family: var(--font-display);
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
 /* ---------- Buttons ---------- */
 
 .btn {

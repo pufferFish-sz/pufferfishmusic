@@ -11,12 +11,10 @@ Preview URL: https://pufferfish-sz.github.io/pufferfishmusic/
 ## File map — where everything lives
 
 ```
-index.html          Home (hero, demo reel, about, skills, timeline)
-projects.html       Projects overview (3 cards)
-ue5-ambience.html   Project 01 — UE5 environmental ambience documentation
-game-jams.html      Project 02 — game jams & programming
-music.html          Project 03 — music compositions
-internships.html    Tencent + Lilith internships
+index.html          Work — THE portfolio page: demo reel + every project inline
+ue5-ambience.html   Deep-dive: UE5 environmental ambience documentation
+about.html          Bio, skills grid, experience timeline
+music.html          Music compositions
 contact.html        Contact form + social links + piano video
 
 css/style.css       ALL styling. Colors/fonts live in the :root block at the top.
@@ -62,11 +60,16 @@ demoreel: {
 
 ### Add a new project
 
-1. Copy an existing project page (e.g. `game-jams.html`) to a new file, say `my-project.html`.
-2. Edit the `<title>`, the `page-hero` block, and the sections.
-3. Add a card linking to it on `projects.html` (copy one of the three `<a class="card">` blocks).
-4. Need a video? Add an entry in `js/videos.js`, then put
-   `<div class="video-embed" data-video="your_key"></div>` where the player should appear.
+All projects live as sections on `index.html` (the Work page):
+
+1. Copy an existing `<section class="section reveal" id="...">` block in `index.html` and
+   edit its id, heading, "Programs:/Role:" lines, and text. Order = order on the page, so
+   put your strongest work higher.
+2. Add a matching chip to the `jump-nav` list near the top of the file.
+3. Need a video? Add an entry in `js/videos.js`, then put
+   `<div class="video-embed" data-video="your_key"></div>` inside your section.
+4. For a long technical write-up, copy `ue5-ambience.html` to a new file and link it from
+   your section with a "Read the full breakdown →" button.
 
 ### Change colors / fonts
 
