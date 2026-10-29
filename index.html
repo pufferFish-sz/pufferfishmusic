@@ -43,11 +43,11 @@
         </p>
         <!-- Jump chips: add one per project section below -->
         <nav class="jump-nav" aria-label="Jump to a project">
-          <a href="#reel">Demo Reel</a>
+          <!-- <a href="#reel">Demo Reel</a> -->
           <a href="#hidden-ones">The Hidden Ones</a>
-          <a href="#afk">AFK Arena / Journey</a>
           <a href="#ue5-ambience">UE5 Ambience</a>
           <a href="#vr-mech">VR Interactive Music</a>
+          <a href="#lip-sync">Lip Sync</a>
           <a href="#waves">Waves</a>
           <a href="#game-jams">Game Jams</a>
         </nav>
@@ -56,6 +56,8 @@
     </section>
 
     <!-- ===== Demo reel ===== -->
+    <!-- Hidden until the reel video is ready: set its IDs in js/videos.js, then uncomment
+         this section and the "Demo Reel" jump link above.
     <section class="section" id="reel">
       <div class="container container--narrow">
         <p class="section-label">Listen</p>
@@ -63,6 +65,7 @@
         <div class="video-embed" data-video="demoreel"></div>
       </div>
     </section>
+    -->
 
     <!-- ===== Tencent: The Hidden Ones ===== -->
     <section class="section reveal" id="hidden-ones">
@@ -91,34 +94,6 @@
           Disclaimer: all redesign materials shown have already been released on the market or
           through alpha testing. No copyright infringement intended.
         </p>
-      </div>
-    </section>
-
-    <!-- ===== Lilith: AFK Arena / Journey ===== -->
-    <section class="section reveal" id="afk">
-      <div class="container container--narrow">
-        <p class="section-label">Lilith Games · Internship</p>
-        <h2>AFK Arena / AFK Journey: UI SFX &amp; VO Pipeline</h2>
-        <p class="meta-row"><strong>Programs:</strong> REAPER, Lua ReaScript</p>
-        <p class="meta-row"><strong>Role:</strong> Sound Design, Pipeline Tools</p>
-        <p style="margin-top:1rem">
-          AFK Arena and AFK Journey are SLG-mechanic-heavy RPG mobile games that lean into
-          magical, whimsical, fantasy-flavored aesthetics. Here is an example of the UI SFX I
-          made during the internship.
-        </p>
-        <div class="video-embed" data-video="afk_ui"></div>
-        <h3>Audio tools: ReaScript batch VO processing</h3>
-        <p>
-          The team’s pain point was the massive amount of narrative VO to process. I wrote
-          ReaScripts in Lua that manipulate samples directly on each track: automatically
-          splitting long WAV files into separate vocal lines, moving each into its own track,
-          and gluing media items per track, so that processed files batch-export with the
-          correct naming conventions.
-        </p>
-        <figure style="margin:1.5rem 0 0">
-          <img src="assets/img/internships/reascript.avif" alt="REAPER session showing a custom ReaScript tool splitting VO lines into separate tracks" loading="lazy" width="729" height="493" style="border-radius:14px;border:1px solid rgba(255,255,255,0.08)">
-          <figcaption style="font-size:0.85rem;color:#97a1b4;margin-top:0.5rem">A ReaScript batch tool at work in REAPER.</figcaption>
-        </figure>
       </div>
     </section>
 
@@ -168,6 +143,18 @@
           <a href="https://github.com/ADJ-acent/BigMech" target="_blank" rel="noopener">GitHub</a>.
         </p>
         <div class="video-embed" data-video="vr_mech"></div>
+      </div>
+    </section>
+
+    <!-- ===== Audio-driven lip sync ===== -->
+    <section class="section reveal" id="lip-sync">
+      <div class="container container--narrow">
+        <p class="section-label">Project</p>
+        <h2>Audio-Driven Lip Sync</h2>
+        <p style="margin-top:1rem">
+          Character mouth animation driven directly by the voice audio.
+        </p>
+        <div class="video-embed" data-video="lip_sync"></div>
       </div>
     </section>
 

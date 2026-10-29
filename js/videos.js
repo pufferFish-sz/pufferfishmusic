@@ -27,35 +27,35 @@ const VIDEOS = {
   // Internships — Tencent, The Hidden Ones character redesign
   ruhua: {
     title: "Ruhua Redesign — The Hidden Ones",
-    yt: "YT_VIDEO_ID_RUHUA",
+    yt: "NvPBncXmLV8",
     bili: "BILI_BVID_RUHUA",
-  },
-
-  // Internships — Lilith, AFK Arena / AFK Journey UI SFX
-  afk_ui: {
-    title: "UI SFX — AFK Arena / AFK Journey",
-    yt: "YT_VIDEO_ID_AFK_UI",
-    bili: "BILI_BVID_AFK_UI",
   },
 
   // Projects — UE5 environmental ambience walkthrough
   ambience: {
     title: "UE5 Environmental Ambience Walkthrough",
-    yt: "YT_VIDEO_ID_AMBIENCE",
+    yt: "BbBrQCV-NZo",
     bili: "BILI_BVID_AMBIENCE",
   },
 
   // Projects — VR interactive music & mech fighting game
   vr_mech: {
     title: "VR Interactive Music & Mech Fighting",
-    yt: "YT_VIDEO_ID_VR_MECH",
+    yt: "QZswwaJoX_E",
     bili: "BILI_BVID_VR_MECH",
+  },
+
+  // Projects — audio-driven lip sync
+  lip_sync: {
+    title: "Audio-Driven Lip Sync",
+    yt: "M32167uomg4",
+    bili: "BILI_BVID_LIP_SYNC",
   },
 
   // Projects — Waves battleship simulator
   waves: {
     title: "Waves — 3D Battleship Simulator",
-    yt: "YT_VIDEO_ID_WAVES",
+    yt: "07_PQdnouqA",
     bili: "BILI_BVID_WAVES",
   },
 
